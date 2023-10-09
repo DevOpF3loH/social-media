@@ -1,38 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: slateblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+}
+
+.navright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.navbar ul {
+  display: flex;
+  padding: 0;
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #f1356d;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #f88379;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (max-width: 768px) {
+  .navbar .links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px);
+    -tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    border-top: 1px solid black;
+    display: none;
+    z-index: 1;
+  }
+  .navbar li {
+    text-align: center;
+    margin: 0;
+    height: 40px;
+  }
+  .navbar .links a {
+    color: black;
+    width: 100%;
+  }
+  .navbar li:hover {
+    background-color: grey;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar.expanded ul {
+    display: block;
+  }
+}
+
+.navtitle {
+  color: #f88379;
+  font-style: italic;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .navtitle {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
+
+.navbar .links {
+  text-align: center;
+  margin-right: 50px;
+  display: block;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid white;
+  padding-bottom: 2px;
+  margin: 10px;
+}
+
+.links a:hover {
+  border-bottom: 3px solid #f1356d;
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.navbar .user {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .user {
+    margin-right: 60px;
+  }
+}
+
+.user p {
+  font-size: 15px;
+  margin-right: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 768px) {
+  .user p {
+    font-size: 15px;
+    position: relative;
+    bottom: 10px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.user img {
+  font-size: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .user img {
+    font-size: 10px;
+    width: 40px;
+    height: 40px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.logoutbutton {
+  padding: 10px;
+  border: 2px solid #f1356d;
+  color: white;
+  background-color: slateblue;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.logoutbutton:hover {
+  background-color: #f1356d;
+  transition: ease-in-out;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.submitbutton {
+  padding: 10px;
+  border: 2px solid #f1356d;
+  color: white;
+  background-color: slateblue;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.submitbutton:hover {
+  background-color: #f1356d;
+  transition: ease-in-out;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .logoutbutton {
+    padding: 5px;
+    border: 2px solid #f1356d;
+    color: white;
+    background-color: slateblue;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2px;
+    right: 110px;
   }
+}
+
+.logincontainer {
+  color: #f88379;
+}
+
+.signinbutton {
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #0cafff;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.signinbutton:hover {
+  background-color: #0047ab;
+  transition: ease-in-out;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.CreatePost {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.postcard {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 15px;
+  background-color: #f88379;
+  height: 30px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.footerlike {
+  display: flex;
+  align-items: center;
+}
+
+.likebutton {
+  font-size: large;
+  border: none;
+  background-color: transparent;
+}
+
+.likebutton:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.likebutton:active {
+  transform: scale(0.8);
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 40px; /* gutter size */
+  padding-right: 10px;
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
+  background: grey;
+}
+
+.title {
+  background-color: #f1356d;
+  color: white;
+  font-style: italic;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.loginmaincontainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logincontainer {
+  margin-top: 50px;
+  padding: 30px 20px;
+  width: 320px;
+  border-radius: 7px;
+  background-color: aliceblue;
+  backdrop-filter: blur(5px);
+  background-color: rgba(43, 0, 255, 0.588);
+  overflow: hidden;
+}
+
+form {
+  margin-top: 50px;
+  padding: 30px 20px;
+  width: 320px;
+  border-radius: 7px;
+  background-color: aliceblue;
+  backdrop-filter: blur(5px);
+  background-color: rgba(43, 0, 255, 0.588);
+  overflow: hidden;
+}
+
+input,
+textarea {
+  padding: 8px 10px;
+  margin: 3px 8px 16px 8px;
+  background-color: rgba(222, 239, 248, 0.877);
+  border: 0px transparent;
+  border-radius: 5px;
+  color: rgb(97, 4, 184);
+  font-size: 16px;
+  z-index: 1;
 }
