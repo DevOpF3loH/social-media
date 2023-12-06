@@ -187,13 +187,13 @@ body {
   background-color: slateblue;
   border-radius: 20px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .logoutbutton:hover {
   background-color: #f1356d;
   transition: ease-in-out;
   transition-duration: 500ms;
-  cursor: pointer;
 }
 
 .submitbutton {
@@ -203,13 +203,13 @@ body {
   background-color: slateblue;
   border-radius: 20px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .submitbutton:hover {
   background-color: #f1356d;
   transition: ease-in-out;
   transition-duration: 500ms;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,13 +238,13 @@ body {
   background-color: #0cafff;
   border-radius: 20px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .signinbutton:hover {
   background-color: #0047ab;
   transition: ease-in-out;
   transition-duration: 500ms;
-  cursor: pointer;
 }
 
 .CreatePost {
@@ -278,12 +278,12 @@ body {
   font-size: large;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .likebutton:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(1.2);
-  cursor: pointer;
 }
 
 .likebutton:active {
